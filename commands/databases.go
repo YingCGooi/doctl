@@ -44,7 +44,7 @@ func Databases() *Command {
 			Use:     "databases",
 			Aliases: []string{"db", "dbs", "d", "database"},
 			Short:   "Display commands that manage databases",
-			Long:    "The commands under `doctl databases` are for managing your MySQL, Redis, and PostgreSQL database services.",
+			Long:    "The commands under `doctl databases` are for managing your MySQL, Redis, PostgreSQL, and MongoDB database services.",
 		},
 	}
 
@@ -73,7 +73,7 @@ There are a number of flags that customize the configuration, all of which are o
 	AddIntFlag(cmdDatabaseCreate, doctl.ArgDatabaseNumNodes, "", defaultDatabaseNodeCount, nodeNumberDetails)
 	AddStringFlag(cmdDatabaseCreate, doctl.ArgRegionSlug, "", defaultDatabaseRegion, "The region where the database cluster will be created, e.g. `nyc1` or `sfo2`")
 	AddStringFlag(cmdDatabaseCreate, doctl.ArgSizeSlug, "", defaultDatabaseNodeSize, nodeSizeDetails)
-	AddStringFlag(cmdDatabaseCreate, doctl.ArgDatabaseEngine, "", defaultDatabaseEngine, "The database engine to be used for the cluster. Possible values are: `pg` for PostgreSQL, `mysql`, and `redis`.")
+	AddStringFlag(cmdDatabaseCreate, doctl.ArgDatabaseEngine, "", defaultDatabaseEngine, "The database engine to be used for the cluster. Possible values are: `pg` for PostgreSQL, `mysql`, `redis`, and `mongodb`.")
 	AddStringFlag(cmdDatabaseCreate, doctl.ArgVersion, "", "", "The database engine version, e.g. 11 for PostgreSQL version 11")
 	AddStringFlag(cmdDatabaseCreate, doctl.ArgPrivateNetworkUUID, "", "", "The UUID of a VPC to create the database cluster in; the default VPC for the region will be used if excluded")
 
